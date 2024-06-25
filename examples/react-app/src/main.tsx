@@ -8,8 +8,8 @@ import { coinbaseWallet, walletConnect } from '@wagmi/connectors';
 import { http, createConfig, injected } from '@wagmi/core';
 import { mainnet, sepolia } from '@wagmi/core/chains';
 
+import { BakoSafeConnector } from '@fuel-connectors/bako-safe';
 import {
-  BakoSafeConnector,
   BurnerWalletConnector,
   FuelWalletConnector,
   FuelWalletDevelopmentConnector,
@@ -20,9 +20,10 @@ import { FuelProvider } from '@fuels/react';
 
 import * as Toast from '@radix-ui/react-toast';
 
-import App from './App.tsx';
-import ScreenSizeIndicator from './components/screensize-indicator.tsx';
+import App from './App';
+import ScreenSizeIndicator from './components/screensize-indicator';
 import './index.css';
+import { Connect } from '@fuel-connectors/ui';
 
 const queryClient = new QueryClient();
 
@@ -63,6 +64,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <FuelProvider
+        ui={false}
         theme="dark"
         fuelConfig={{
           connectors: [
@@ -79,6 +81,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         }}
       >
         <Toast.Provider>
+          <Connect />
           <App />
           <Toast.Viewport
             id="toast-viewport"

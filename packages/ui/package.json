@@ -1,0 +1,45 @@
+{
+  "name": "@fuel-connectors/ui",
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "typings": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "require": "./dist/index.js",
+        "default": "./dist/index.mjs"
+      }
+    }
+  },
+  "scripts": {
+    "build": "pnpm ts:check && tsup",
+    "ts:check": "pnpm tsc --noEmit"
+  },
+  "peerDependencies": {
+    "fuels": ">=0.88.1",
+    "react": "^18.3.1"
+  },
+  "dependencies": {
+    "@fuels/react": "/home/pedro-pereira/Documentos/projetos/infinitybase/fuel/fuels-npm-packs/packages/react/fuels-react-0.21.0.tgz",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "events": "^3.3.0"
+  },
+  "devDependencies": {
+    "@fuels/ts-config": "0.21.0",
+    "@fuels/tsup-config": "0.21.0",
+    "@tanstack/react-query": "5.35.1",
+    "@types/react": "18.3.1",
+    "compare-versions": "^6.1.0",
+    "fuels": "0.88.1",
+    "styled-components": "^6.1.1",
+    "tsup": "^7.2.0"
+  }
+}
