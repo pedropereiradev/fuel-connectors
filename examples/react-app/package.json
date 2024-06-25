@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@fuels/connectors": "workspace:*",
-    "@fuels/react": "0.20.0",
+    "@fuel-connectors/bako-safe": "workspace:*",
+    "@fuel-connectors/ui": "workspace:*",
+    "@fuels/react": "0.21.0",
     "@radix-ui/react-toast": "1.1.5",
     "@tanstack/react-query": "5.35.1",
     "@wagmi/connectors": "4.3.3",
